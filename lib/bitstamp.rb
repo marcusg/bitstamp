@@ -1,3 +1,5 @@
+require 'active_support'
+require 'active_support/deprecation'
 require 'active_support/core_ext'
 require 'active_support/inflector'
 require 'active_model'
@@ -21,7 +23,7 @@ module Bitstamp
 
   # Bitstamp secret
   mattr_accessor :secret
-  
+
   # Bitstamp client ID
   mattr_accessor :client_id
 
@@ -62,7 +64,7 @@ module Bitstamp
   def self.setup
     yield self
   end
-  
+
   def self.configured?
     self.key && self.secret && self.client_id
   end
